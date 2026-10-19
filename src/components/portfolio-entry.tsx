@@ -17,11 +17,11 @@ export function PortfolioEntry({ portfolio }: { portfolio: Portfolio }) {
         </div>
       )}
       <div className="flex flex-col flex-1">
-        <h3 className="font-serif text-md mb-3">
+        <h3 className="font-serif text-md">
           {portfolio.projectUrl ? (
             <a
-              href={portfolio.projectUrl}
-              className="group inline-flex items-center gap-2 hover:text-zinc-600 transition-colors duration-300"
+              href={portfolio.projectUrl} target="_blank"
+              className="group inline-flex items-center gap-2 text-zinc-300 hover:text-zinc-50 transition-colors duration-300"
             >
               {portfolio.title}
               <ArrowUpRight
@@ -33,9 +33,15 @@ export function PortfolioEntry({ portfolio }: { portfolio: Portfolio }) {
             portfolio.title
           )}
         </h3>
+        {portfolio.type && (
+          <p className="text-xs text-zinc-400 leading-relaxed mb-3">
+            {portfolio.type}
+          </p>
+        )}
+        
 
         {portfolio.technologies && (
-          <div className="flex gap-2 mb-4 flex-wrap">
+          <div className="flex gap-2 mb-2 flex-wrap">
             {portfolio.technologies.map((tech, index) => (
               <span
                 key={index}
@@ -47,11 +53,15 @@ export function PortfolioEntry({ portfolio }: { portfolio: Portfolio }) {
           </div>
         )}
 
+        
+        <p className="text-sm text-zinc-300 mb-4">
+          {portfolio.description}
+        </p>
         <div className="flex gap-6">
-          {portfolio.projectUrl && (
+          {/* {portfolio.projectUrl && (
             <a
-              href={portfolio.projectUrl}
-              className="group inline-flex items-center gap-2 text-xs text-zinc-500 hover:text-zinc-900 transition-colors duration-300"
+              href={portfolio.projectUrl} target="_blank"
+              className="group inline-flex items-center gap-2 text-xs text-zinc-400 hover:text-zinc-50 transition-colors duration-300"
             >
               <ArrowUpRight
                 size={12}
@@ -59,11 +69,11 @@ export function PortfolioEntry({ portfolio }: { portfolio: Portfolio }) {
               />
               <span className="tracking-wider uppercase">Project</span>
             </a>
-          )}
+          )} */}
           {portfolio.codeUrl && (
             <a
-              href={portfolio.codeUrl}
-              className="group inline-flex items-center gap-2 text-xs text-zinc-500 hover:text-zinc-900 transition-colors duration-300"
+              href={portfolio.codeUrl} target="_blank"
+              className="group inline-flex items-center gap-2 text-xs text-zinc-400 hover:text-zinc-50 transition-colors duration-300"
             >
               <ArrowUpRight
                 size={12}
@@ -73,9 +83,6 @@ export function PortfolioEntry({ portfolio }: { portfolio: Portfolio }) {
             </a>
           )}
         </div>
-        <p className="text-sm text-zinc-600 mb-4 mt-4 italic">
-          {portfolio.description}
-        </p>
       </div>
     </div>
   );

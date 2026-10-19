@@ -14,7 +14,7 @@ import { sectionOrder, Section } from "@/data/section-order";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#FFFCF8]">
+    <div className="min-h-screen bg-[#121212]">
       {/* Don't have a great call on whether max-w-screen-xl is better */}
       <div className="max-w-screen-lg mx-auto px-8 py-24">
         {/* Grid Layout */}
@@ -33,7 +33,7 @@ export default function Home() {
             {aboutMe.description && (
               <section>
                 <p
-                  className="font-serif text-sm leading-relaxed text-zinc-700 [&_a]:underline [&_a]:text-zinc-900 [&_a:hover]:text-zinc-600"
+                  className="font-serif text-lg leading-relaxed text-zinc-300 [&_a]:underline [&_a]:text-zinc-300 [&_a:hover]:text-zinc-100"
                   dangerouslySetInnerHTML={{ __html: aboutMe.description }}
                 />
               </section>
@@ -47,7 +47,7 @@ export default function Home() {
                   return (
                     newsData.length > 0 && (
                       <section key={sectionName}>
-                        <h2 className="font-serif text-l mb-12 tracking-wide uppercase">
+                        <h2 className="font-serif text-2xl mb-12 tracking-wide uppercase">
                           News
                         </h2>
                         <div className="space-y-12">
@@ -64,7 +64,7 @@ export default function Home() {
                   return (
                     educationData.length > 0 && (
                       <section key={sectionName}>
-                        <h2 className="font-serif text-zinc-700 mb-12 tracking-wide uppercase">
+                        <h2 className="font-serif text-2xl mb-12 tracking-wide uppercase">
                           Education
                         </h2>
                         <div className="space-y-12">
@@ -79,7 +79,7 @@ export default function Home() {
                   return (
                     publicationData.length > 0 && (
                       <section key={sectionName}>
-                        <h2 className="font-serif text-l mb-12 tracking-wide uppercase">
+                        <h2 className="font-serif text-2xl mb-12 tracking-wide uppercase">
                           Publications
                         </h2>
                         <div className="space-y-12">
@@ -99,7 +99,7 @@ export default function Home() {
                   return (
                     experienceData.length > 0 && (
                       <section key={sectionName}>
-                        <h2 className="font-serif text-md mb-12 tracking-wide uppercase">
+                        <h2 className="font-serif text-2xl mb-12 tracking-wide uppercase">
                           Experience
                         </h2>
                         <div className="space-y-12">
@@ -117,7 +117,7 @@ export default function Home() {
                   return (
                     portfolioData.length > 0 && (
                       <section key={sectionName}>
-                        <h2 className="font-serif text-md mb-12 tracking-wide uppercase">
+                        <h2 className="font-serif text-2xl mb-12 tracking-wide uppercase">
                           Portfolio
                         </h2>
                         <div className="space-y-12">
